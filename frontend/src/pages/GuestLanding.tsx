@@ -256,36 +256,16 @@ const GuestLanding = () => {
           </div>
 
           {/* Selection Buttons */}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="flex justify-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
+              className="w-full max-w-md"
             >
               <Button
                 size="lg"
                 className="w-full h-24 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-                onClick={() => {
-                  setFlowState('menu');
-                  setOrderType('now');
-                }}
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <ShoppingCart className="h-6 w-6" />
-                  <span>Order Now</span>
-                </div>
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full h-24 text-lg font-semibold border-2 shadow-lg hover:shadow-xl transition-all"
                 onClick={() => {
                   setFlowState('reservation');
                   setOrderType('booking');
@@ -308,9 +288,7 @@ const GuestLanding = () => {
             <Card className="bg-muted/50 border-muted-foreground/20">
               <CardContent className="pt-6">
                 <p className="text-sm text-muted-foreground text-center">
-                  {tableId
-                    ? '👉 You scanned a table QR code! Choose to order now or make a reservation.'
-                    : '👉 Choose how you\'d like to proceed'}
+                  👉 Reserve a table to start ordering
                 </p>
               </CardContent>
             </Card>
